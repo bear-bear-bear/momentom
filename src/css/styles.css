@@ -11,3 +11,11 @@
 body {
   font-family: "Noto Sans KR", sans-serif;
 }
+
+/* ------ temp ------- */
+
+.momentom-header,
+.momentom-main,
+.momentom-footer {
+  border: 1px solid black;
+}
