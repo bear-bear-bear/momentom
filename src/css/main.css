@@ -5,6 +5,7 @@
 
 /* ----- components ----- */
 @import "./components/layout.css";
+@import "./components/to-do.css"; /* to-do.css should always be under layout.css
 
 /* ----- elements ----- */
 
