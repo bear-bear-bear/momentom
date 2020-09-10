@@ -16,7 +16,6 @@ body {
 /* ------ temp ------- */
 
 .momentum-header,
-.momentum-main,
-.momentum-footer {
+.momentum-main {
   border: 2px solid black;
 }

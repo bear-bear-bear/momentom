@@ -19,9 +19,3 @@ body {
   align-items: flex-end;
   width: 100vw;
 }
-
-.momentum-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-}
