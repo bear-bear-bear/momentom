@@ -18,7 +18,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: var(--header-height);
 }
 
@@ -40,6 +40,6 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: var(--footer-height);
 }
