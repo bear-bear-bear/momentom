@@ -54,6 +54,28 @@ body {
   z-index: 2;
 }
 
+.welcome-msg::after {
+  content: '';
+  position: absolute;
+  top: -0.05em;
+  right: -0.05em;
+  width: 0.03125em;
+  height: 1.2em;
+  background-color: #ccc;
+  animation: blink-cursor 1s steps(1, end) infinite;
+}
+
+@keyframes blink-cursor {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
 .star {
   background-color: #aaa;
   position: absolute;
