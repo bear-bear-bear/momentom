@@ -1,9 +1,9 @@
 import initUniverse from './initUniverse';
-import greeting from './greeting';
+import initGreeting from './initGreeting';
 
 const init = () => {
   initUniverse();
-  askName();
+  initGreeting();
 };
 
 document.addEventListener('DOMContentLoaded', init, false);

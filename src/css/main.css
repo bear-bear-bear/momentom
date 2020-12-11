@@ -26,6 +26,10 @@ body {
   overflow: hidden;
 }
 
+.hide {
+  display: none;
+}
+
 /* body {
   font-family: 'Noto Sans KR', sans-serif;
 } */
