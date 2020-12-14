@@ -1,11 +1,12 @@
 import 'regenerator-runtime/runtime';
 import initUniverse from './initUniverse';
-import initGreeting from './initGreeting';
+import initGreetingMsg from './initGreetingMsg';
 import launchRocket from './launchRocket';
 
 const init = async () => {
   initUniverse();
-  await initGreeting();
+  await initGreetingMsg();
+  // await greet();
   launchRocket();
 };
 

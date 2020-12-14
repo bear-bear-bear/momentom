@@ -1,4 +1,4 @@
-const initGreeting = () => {
+const initGreetingMsg = () => {
   const greetingForm = document.querySelector('.greeting');
   const localStorage = window.localStorage;
   return new Promise((resolve, reject) => {
@@ -14,9 +14,9 @@ const initGreeting = () => {
       resolve();
     };
 
-    const handlegreetingForm = (e) => {
+    const setUserName = (e) => {
       e.preventDefault();
-      greetingForm.removeEventListener('submit', handlegreetingForm);
+      greetingForm.removeEventListener('submit', setUserName);
 
       const name = greetingForm.querySelector('.greeting__input').value || 'Annonymous';
       localStorage.setItem('userName', name);
@@ -27,8 +27,8 @@ const initGreeting = () => {
     const userName = localStorage.getItem('userName');
 
     if (userName) setHideGreeting();
-    else greetingForm.addEventListener('submit', handlegreetingForm, false);
+    else greetingForm.addEventListener('submit', setUserName, false);
   });
 };
 
-export default initGreeting;
+export default initGreetingMsg;
