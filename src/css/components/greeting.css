@@ -9,6 +9,7 @@
   font-size: 1.8rem;
   color: #ccc;
   z-index: 2;
+  transition: all 0.8s ease-in-out;
 }
 
 .greeting__label {
@@ -52,7 +53,7 @@
   color: #ccc;
   font-size: 1em;
   font-weight: 700;
-  text-shadow: 0.1px 0.2px 5px silver;
+  /* text-shadow: 0.1px 0.2px 5px silver; */
   letter-spacing: 0.3em;
   -webkit-text-stroke: none;
   opacity: 0;
