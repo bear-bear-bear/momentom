@@ -10,7 +10,7 @@
 @import './components/greeting.css';
 @import './components/clock.css';
 @import './components/location.css';
-@import './components/spacecraft.css';
+@import './components/scene.css';
 
 /* ----- elements ----- */
 
@@ -28,7 +28,8 @@ body {
 }
 
 .hide {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* body {
