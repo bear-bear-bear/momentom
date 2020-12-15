@@ -11,6 +11,7 @@ const init = async () => {
     await greet();
     // await launchRocket();
   }
+  launchRocket();
   console.log('마지막동작'); // 임시
 };
 
