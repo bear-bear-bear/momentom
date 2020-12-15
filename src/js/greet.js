@@ -4,7 +4,7 @@ const greet = () => {
 
     const greetDown = () => {
       greeting.style.opacity = '0';
-      greeting.style.top = '55%';
+      greeting.style.top = '52%';
     };
 
     const greetUp = () => {
@@ -13,10 +13,7 @@ const greet = () => {
     };
 
     const replaceMsg = (str) => {
-      const greetingMsg = document.createElement('p');
-      greetingMsg.textContent = str;
-
-      greeting.replaceChildren(greetingMsg);
+      greeting.textContent = str;
     };
 
     greetDown();
