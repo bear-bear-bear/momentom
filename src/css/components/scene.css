@@ -4,14 +4,37 @@
   align-items: flex-end;
   width: 100%;
   height: 100%;
-  transition: opacity 1s ease-in-out;
+  animation: turn-on-scene 3s linear forwards;
+}
+
+@keyframes turn-on-scene {
+  0%,
+  25%,
+  40% {
+    opacity: 0;
+  }
+
+  15%,
+  30% {
+    opacity: 0.5;
+  }
+
+  20%,
+  35%,
+  85% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .rocket {
   position: relative;
   height: 40px;
   width: 30px;
-  animation: shake 0.15s ease infinite;
+  /* animation: shake 0.15s ease infinite; */ /* This animation is added from javascript*/
   /* bottom: -100%; */
 }
 
@@ -26,7 +49,12 @@
   }
 }
 
-.rocket::before {
+.rocket > img {
+  height: 100%;
+  width: 100%;
+}
+
+.rocket-fire::before {
   content: '';
   position: absolute;
   bottom: -50px;
@@ -35,9 +63,15 @@
   width: 4px;
   height: 50px;
   background: linear-gradient(#00aeff, transparent);
+  opacity: 0;
+  animation: turn-on-fire 3s steps(2, end) forwards;
 }
 
-.rocket > img {
-  height: 100%;
-  width: 100%;
+@keyframes turn-on-fire {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
