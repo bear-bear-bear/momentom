@@ -24,7 +24,9 @@ const rocket = {
   },
 
   moveUp: async function () {
-    // this.rocket.
+    for (let i = 0; i < 50; i++) {
+      this.rocket.style.bottom = `${i}%`;
+    }
   },
 };
 
@@ -35,8 +37,8 @@ const launchRocket = async () => {
   await rocket.ready();
   await stop(4000);
   await rocket.start();
-  await stop(2000);
-  // await moveUpRocket();
+  await stop(3000);
+  await rocket.moveUp();
   // await scene.off();
 
   return;
