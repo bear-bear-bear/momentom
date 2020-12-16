@@ -1,43 +1,42 @@
+const greeting = {
+  greeting: document.querySelector('.greeting'),
+
+  down: async function () {
+    console.log(greeting);
+    this.greeting.style.opacity = '0';
+    this.greeting.style.top = '52%';
+  },
+
+  up: async function () {
+    this.greeting.style.opacity = '1';
+    this.greeting.style.top = '50%';
+  },
+
+  replaceMsg: async function (str) {
+    this.greeting.textContent = str;
+  },
+};
+
 const greet = async () => {
-  const greeting = document.querySelector('.greeting');
+  const stop = (s = 1) => new Promise((resolve) => setTimeout(resolve, s * 1000));
 
-  const greetDown = () => {
-    greeting.style.opacity = '0';
-    greeting.style.top = '52%';
-  };
+  await greeting.down();
+  await stop(0.8);
 
-  const greetUp = () => {
-    greeting.style.opacity = '1';
-    greeting.style.top = '50%';
-  };
+  greeting.replaceMsg(`안녕하세요 ${localStorage.getItem('userName')}님`);
 
-  const replaceMsg = (str) => {
-    greeting.textContent = str;
-  };
+  await greeting.up();
+  await stop(1.6);
+  await greeting.down();
+  await stop(0.8);
 
-  const textMove = (moveFunc, ms = 800) => {
-    return new Promise((resolve) => {
-      moveFunc();
-      setTimeout(resolve, ms);
-    });
-  };
-  const stop = (ms = 800) => new Promise((resolve) => setTimeout(resolve, ms));
+  greeting.replaceMsg(`여행을 시작합니다.`);
 
-  await textMove(greetDown);
+  await greeting.up();
+  await stop(1.6);
+  await greeting.down();
 
-  replaceMsg(`안녕하세요 ${localStorage.getItem('userName')}님`);
-
-  await textMove(greetUp);
-  await stop();
-  await textMove(greetDown);
-
-  replaceMsg(`여행을 시작합니다.`);
-
-  await textMove(greetUp);
-  await stop();
-  await textMove(greetDown);
-
-  await stop();
+  await stop(1.6);
 
   return;
 };
