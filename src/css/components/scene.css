@@ -34,8 +34,9 @@
   position: relative;
   height: 40px;
   width: 30px;
+  bottom: -100%;
   /* animation: shake 0.15s ease infinite; */ /* This animation is added from javascript*/
-  /* bottom: -100%; */
+  transition: bottom 3s ease-in-out;
 }
 
 @keyframes shake {
