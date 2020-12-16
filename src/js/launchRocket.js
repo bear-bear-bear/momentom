@@ -24,21 +24,34 @@ const rocket = {
   },
 
   moveUp: async function () {
-    for (let i = 0; i < 50; i++) {
-      this.rocket.style.bottom = `${i}%`;
-    }
+    this.rocket.style.bottom = `50%`;
+  },
+
+  strongFire: async function () {
+    this.rocket.classList.remove('rocket-fire');
+    this.rocket.classList.add('rocket-fire--strong');
+  },
+
+  toDestination: async function () {
+    this.rocket.style.bottom = '200%';
   },
 };
 
-const stop = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, ms));
+const stop = (s = 1) => new Promise((resolve) => setTimeout(resolve, s * 1000));
 
 const launchRocket = async () => {
   await scene.on();
   await rocket.ready();
-  await stop(4000);
+  await stop(3);
   await rocket.start();
-  await stop(3000);
+  await stop(4);
   await rocket.moveUp();
+  await stop(4);
+  await rocket.strongFire();
+  await stop(0.6);
+  await rocket.toDestination();
+  await stop(2);
+  // TODO: add Star move down animation
   // await scene.off();
 
   return;

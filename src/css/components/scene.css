@@ -50,22 +50,33 @@
   }
 }
 
+.rocket::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 0;
+  background: linear-gradient(#00aeff, transparent);
+  opacity: 0;
+}
+
 .rocket > img {
   height: 100%;
   width: 100%;
 }
 
 .rocket-fire::before {
-  content: '';
-  position: absolute;
-  bottom: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
   height: 50px;
-  background: linear-gradient(#00aeff, transparent);
-  opacity: 0;
+  bottom: -50px;
   animation: turn-on-fire 3s steps(2, end) forwards;
+}
+
+.rocket-fire--strong::before {
+  width: 6px;
+  height: 100px;
+  bottom: -100px;
+  opacity: 1;
 }
 
 @keyframes turn-on-fire {
