@@ -23,7 +23,7 @@ const rocket = {
     this.rocket.style.animationDelay = '3s';
   },
 
-  moveUp: async function () {
+  toCenter: async function () {
     this.rocket.style.bottom = `50%`;
   },
 
@@ -32,7 +32,7 @@ const rocket = {
     this.rocket.classList.add('rocket-fire--strong');
   },
 
-  toDestination: async function () {
+  toTop: async function () {
     this.rocket.style.bottom = '200%';
   },
 };
@@ -45,11 +45,11 @@ const launchRocket = async () => {
   await stop(3);
   await rocket.start();
   await stop(4);
-  await rocket.moveUp();
+  await rocket.toCenter();
   await stop(4);
   await rocket.strongFire();
   await stop(0.6);
-  await rocket.toDestination();
+  await rocket.toTop();
   await stop(2);
   // TODO: add Star move down animation
   // await scene.off();
