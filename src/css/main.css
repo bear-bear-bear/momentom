@@ -3,9 +3,11 @@
 @import './reset.css';
 @import './variable.css';
 
+/* ----- templates ----- */
+@import './templates/layout.css';
+
 /* ----- components ----- */
 @import './components/universe.css';
-@import './components/layout.css';
 @import './components/to-do.css'; /* to-do.css should always be under layout.css */
 @import './components/greeting.css';
 @import './components/clock.css';
