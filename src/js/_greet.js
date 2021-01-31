@@ -4,7 +4,6 @@ const greeting = {
   greeting: document.querySelector('.greeting'),
 
   down() {
-    console.log(greeting);
     this.greeting.style.opacity = '0';
     this.greeting.style.top = '52%';
   },
