@@ -1,4 +1,5 @@
 import stop from './_stop';
+import onElems from './_onElems';
 
 const flash = {
   screen: document.body,
@@ -18,23 +19,18 @@ const removeStars = () => {
   starsWrap?.remove();
 };
 
-const onElementsDisplay = () => {
-  const hideElems = document.querySelectorAll('.hide');
-
-  hideElems?.forEach((elem) => elem.classList.remove('hide'));
-};
-
-const clearAnimeArticle = async () => {
-  // await flash.on();
-  // await stop(1);
+const toMomentum = async () => {
+  await flash.on();
 
   removeStars();
-  onElementsDisplay();
 
-  // await stop(1);
-  // await flash.off();
+  await stop(2);
+
+  onElems();
+
+  await flash.off();
 
   return;
 };
 
-export default clearAnimeArticle;
+export default toMomentum;
