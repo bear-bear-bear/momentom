@@ -25,14 +25,14 @@ const onElementsDisplay = () => {
 };
 
 const clearAnimeArticle = async () => {
-  await flash.on();
-  await stop(1);
+  // await flash.on();
+  // await stop(1);
 
   removeStars();
   onElementsDisplay();
 
-  await stop(1);
-  await flash.off();
+  // await stop(1);
+  // await flash.off();
 
   return;
 };

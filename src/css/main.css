@@ -38,6 +38,9 @@ body {
 }
 
 /* ------ temp ------- */
+body {
+  transition: none;
+}
 
 .momentum-header,
 .momentum-footer {
