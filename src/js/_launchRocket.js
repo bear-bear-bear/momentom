@@ -30,45 +30,49 @@ const scene = {
 };
 
 const rocket = {
-  rocket: document.body.querySelector('.rocket'),
-
-  ready: async function () {
-    this.rocket.style.bottom = '0';
+  ready() {
+    this.rocket = document.body.querySelector('.rocket');
+    this.rocket.style.bottom = '5%';
   },
 
-  start: async function () {
+  start() {
     this.rocket.classList.add('rocket-fire');
     this.rocket.style.animation = 'shake 0.15s ease infinite';
     this.rocket.style.animationDelay = '3s';
   },
 
-  toCenter: async function () {
+  toCenter() {
     this.rocket.style.bottom = `50%`;
   },
 
-  strongFire: async function () {
+  strongFire() {
     this.rocket.classList.remove('rocket-fire');
     this.rocket.classList.add('rocket-fire--strong');
   },
 
-  toTop: async function () {
+  toTop() {
     this.rocket.style.bottom = '200%';
   },
 };
 
 const launchRocket = async () => {
-  await scene.on();
-  await rocket.ready();
+  scene.on();
+  rocket.ready();
   await stop(3);
-  await rocket.start();
+
+  rocket.start();
   await stop(4);
-  await rocket.toCenter();
+
+  rocket.toCenter();
   await stop(4);
-  await rocket.strongFire();
+
+  rocket.strongFire();
   await stop(0.6);
-  await rocket.toTop();
+
+  rocket.toTop();
   await stop(1.3);
-  scene.off(); // not await
+
+  scene.off();
 
   return;
 };
