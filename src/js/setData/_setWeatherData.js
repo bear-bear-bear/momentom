@@ -10,7 +10,7 @@ const FtoC = (F) => {
 };
 
 const getWeatherData = (lat, lon) => {
-  const reqUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&lang=kr`;
+  const reqUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&lang=kr`;
 
   return fetch(reqUrl).then((res) => res.json());
 };
@@ -49,7 +49,7 @@ const setWeatherData = async () => {
   } = await getWeatherData(lat, lon);
 
   const icon = new Image();
-  icon.src = `http://openweathermap.org/img/wn/${iconName}@2x.png`;
+  icon.src = `https://openweathermap.org/img/wn/${iconName}@2x.png`;
   icon.classList.add('weather__icon');
 
   status.textContent = `${name}, ${FtoC(Fahrenheit)}°C`;
