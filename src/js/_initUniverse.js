@@ -31,14 +31,17 @@ const createStars = (num, isShootingStar = false) => {
 const initUniverse = () => {
   const universe = document.querySelector('.universe');
 
+  const starsWrap = document.createElement('article');
+  starsWrap.classList.add('stars-wrap');
+
   const fixedStars = createStars(50);
   const shootingStars = createStars(50, true);
 
   const DOMfragement = document.createDocumentFragment();
-
   DOMfragement.append(...fixedStars, ...shootingStars);
 
-  universe.append(DOMfragement);
+  starsWrap.append(DOMfragement);
+  universe.append(starsWrap);
 };
 
 export default initUniverse;

@@ -3,16 +3,20 @@ import initUniverse from './_initUniverse';
 import setUserName from './_setUserName';
 import greet from './_greet';
 import launchRocket from './_launchRocket';
+import toMomentum from './_toMomentum';
 
 const init = async () => {
   initUniverse();
-  if (!window.localStorage.getItem('userName')) {
-    await setUserName();
-    await greet();
-    // await launchRocket();
+
+  const loginDone = Boolean(window.localStorage.getItem('userName'));
+
+  if (loginDone === false) {
+    // await setUserName();
+    // await greet();
+    await launchRocket();
   }
-  launchRocket(); // 임시
-  console.log('마지막동작'); // 임시
+
+  await toMomentum();
 };
 
 document.addEventListener('DOMContentLoaded', init, false);

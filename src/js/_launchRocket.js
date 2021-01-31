@@ -1,3 +1,5 @@
+import stop from './_stop';
+
 const scene = {
   scene: document.body.querySelector('.scene'),
 
@@ -5,8 +7,10 @@ const scene = {
     this.scene.classList.remove('hide');
   },
 
-  off: async function () {
-    this.scene.parentNode.removeChild(this.scene);
+  off: function () {
+    setTimeout(() => {
+      this.scene.remove();
+    }, 1000);
   },
 };
 
@@ -37,8 +41,6 @@ const rocket = {
   },
 };
 
-const stop = (s = 1) => new Promise((resolve) => setTimeout(resolve, s * 1000));
-
 const launchRocket = async () => {
   await scene.on();
   await rocket.ready();
@@ -50,9 +52,8 @@ const launchRocket = async () => {
   await rocket.strongFire();
   await stop(0.6);
   await rocket.toTop();
-  await stop(2);
-  // TODO: add Star move down animation
-  // await scene.off();
+  await stop(1.3);
+  scene.off(); // not await
 
   return;
 };
