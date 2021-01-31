@@ -26,9 +26,13 @@ const toMomentum = async () => {
 
   await stop(2);
 
+  await flash.off();
+
+  await stop(4);
+
   onElems();
 
-  await flash.off();
+  await stop(2);
 
   return;
 };
