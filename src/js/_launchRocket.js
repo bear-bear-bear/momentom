@@ -3,8 +3,23 @@ import stop from './_stop';
 const scene = {
   scene: document.body.querySelector('.scene'),
 
-  on: async function () {
-    this.scene.classList.remove('hide');
+  on() {
+    const scene = document.createElement('article');
+    scene.classList.add('scene');
+
+    const rocket = document.createElement('div');
+    rocket.classList.add('rocket');
+
+    const rocketImage = new Image();
+    // CORS 정책으로 깃허브를 제외한 페이지 (로컬호스트 등)에선 이미지가 로드되지 않습니다.
+    rocketImage.src = 'https://github.com/bear-bear-bear/momentum/blob/master/src/img/rocket.png';
+
+    rocketImage.onload = () => {
+      rocket.append(rocketImage);
+      scene.append(rocket);
+
+      this.scene = document.body.appendChild(scene);
+    };
   },
 
   off: function () {

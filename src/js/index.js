@@ -11,8 +11,8 @@ const init = async () => {
   const loginDone = Boolean(window.localStorage.getItem('userName'));
 
   if (loginDone === false) {
-    // await setUserName();
-    // await greet();
+    await setUserName();
+    await greet();
     await launchRocket();
   }
 
