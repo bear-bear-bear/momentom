@@ -10,16 +10,9 @@ const scene = {
     const rocket = document.createElement('div');
     rocket.classList.add('rocket');
 
-    const rocketImage = new Image();
-    // CORS 정책으로 깃허브를 제외한 페이지 (로컬호스트 등)에선 이미지가 로드되지 않습니다.
-    rocketImage.src = 'https://github.com/bear-bear-bear/momentum/blob/master/src/img/rocket.png';
+    scene.append(rocket);
 
-    rocketImage.onload = () => {
-      rocket.append(rocketImage);
-      scene.append(rocket);
-
-      this.scene = document.body.appendChild(scene);
-    };
+    this.scene = document.body.appendChild(scene);
   },
 
   off: function () {

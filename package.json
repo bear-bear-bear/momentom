@@ -1,0 +1,27 @@
+{
+  "name": "momentum",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bear-bear-bear/momentum.git"
+  },
+  "license": "ISC",
+  "homepage": "https://github.com/bear-bear-bear/momentum#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.1.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "regenerator-runtime": "^0.13.7",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.1"
+  }
+}
