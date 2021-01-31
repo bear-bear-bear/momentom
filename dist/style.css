@@ -434,6 +434,7 @@ body {
 
 body {
   position: relative;
+  background: url(./img/back.jpg?56831d25c202dafc5a225e59f6cecf30);
   transition: background-color 0.5s ease-in-out;
 }
 
