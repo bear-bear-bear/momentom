@@ -453,9 +453,9 @@ body {
 
 body.animeDone {
   background: url(./img/back.jpg?56831d25c202dafc5a225e59f6cecf30) no-repeat left/cover;
-  opacity: 0;
+  /* opacity: 0;
   animation: slow-appearance 1s ease-in-out forwards;
-  animation-delay: 2s;
+  animation-delay: 2s; */
 }
 
 @keyframes slow-appearance {
@@ -474,12 +474,12 @@ body.animeDone {
 }
 
 /* ------ temp ------- */
-/* body {
+body {
   transition: none;
   animation: none;
   animation-delay: none;
   opacity: 1;
-} */
+}
 
 .momentum-header,
 .momentum-footer {
