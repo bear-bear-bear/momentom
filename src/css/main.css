@@ -11,7 +11,7 @@
 @import './components/to-do.css'; /* to-do.css should always be under layout.css */
 @import './components/greeting.css';
 @import './components/clock.css';
-@import './components/location.css';
+@import './components/weather.css';
 @import './components/scene.css';
 
 /* ----- elements ----- */
