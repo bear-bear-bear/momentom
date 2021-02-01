@@ -1,5 +1,3 @@
-// https://openweathermap.org/
-const WEATHER_API_KEY = '56abdabcd06ea6bcc038e7935c40bfd1';
 const statusWrap = document.querySelector('.weather');
 const status = document.querySelector('.weather__text');
 
@@ -10,9 +8,17 @@ const FtoC = (F) => {
 };
 
 const getWeatherData = (lat, lon) => {
-  const reqUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&lang=kr`;
+  const WEATHER_API_KEY = '56abdabcd06ea6bcc038e7935c40bfd1'; // https://openweathermap.org/
 
-  return fetch(reqUrl).then((res) => res.json());
+  const fetchUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&lang=kr`;
+  const fetchOption = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  return fetch(fetchUrl, fetchOption).then((res) => res.json());
 };
 
 const getCurrPosition = () => {
@@ -38,8 +44,6 @@ const getCurrPosition = () => {
 };
 
 const setWeatherData = async () => {
-  console.log('날씨데이터 셋');
-
   const [lat, lon] = await getCurrPosition();
 
   const {
