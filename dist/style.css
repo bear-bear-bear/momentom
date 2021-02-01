@@ -318,6 +318,30 @@ body {
   }
 } */
 
+.clock {
+}
+
+.clock__time {
+  display: flex;
+}
+
+.clock__time__prop {
+}
+
+.clock__time__hours {
+}
+
+.clock__time__minutes {
+}
+
+.clock__time__minutes::before {
+  content: ':';
+  margin: 0 0.1em;
+}
+
+.clock__time__AM-PM {
+  margin-left: 0.2em;
+}
 
 .weather {
   display: flex;
