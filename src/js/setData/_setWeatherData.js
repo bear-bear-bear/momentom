@@ -1,5 +1,4 @@
-const statusWrap = document.querySelector('.weather');
-const status = document.querySelector('.weather__text');
+const status = document.querySelector('.weather');
 
 const FtoC = (F) => {
   const C = ((F / 32 - 32) * 5) / 9;
@@ -11,14 +10,8 @@ const getWeatherData = (lat, lon) => {
   const WEATHER_API_KEY = '56abdabcd06ea6bcc038e7935c40bfd1'; // https://openweathermap.org/
 
   const fetchUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&lang=kr`;
-  const fetchOption = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  };
 
-  return fetch(fetchUrl, fetchOption).then((res) => res.json());
+  return fetch(fetchUrl).then((res) => res.json());
 };
 
 const getCurrPosition = () => {
@@ -52,12 +45,14 @@ const setWeatherData = async () => {
     weather: [{ icon: iconName }],
   } = await getWeatherData(lat, lon);
 
-  const icon = new Image();
-  icon.src = `https://openweathermap.org/img/wn/${iconName}@2x.png`;
-  icon.classList.add('weather__icon');
+  const iconSRC = `https://openweathermap.org/img/wn/${iconName}@4x.png`;
 
-  status.textContent = `${name}, ${FtoC(Fahrenheit)}°C`;
-  statusWrap.append(icon);
+  status.innerHTML = `
+<p class='weather__text'>${name}, ${FtoC(Fahrenheit)}°C</p>
+<div class='weather__icon-wrap'>
+  <img class='weather__icon' src='${iconSRC}' alt='날씨아이콘' />
+<div>
+`.trim();
 };
 
 export default setWeatherData;
