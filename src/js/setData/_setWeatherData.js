@@ -42,7 +42,7 @@ const setWeatherData = async () => {
   const {
     name,
     main: { temp: Fahrenheit },
-    weather: [{ icon: iconName }],
+    weather: [{ icon: iconName, description: iconAlt }],
   } = await getWeatherData(lat, lon);
 
   const iconSRC = `https://openweathermap.org/img/wn/${iconName}@4x.png`;
@@ -50,8 +50,8 @@ const setWeatherData = async () => {
   status.innerHTML = `
 <p class='weather__text'>${name}, ${FtoC(Fahrenheit)}°C</p>
 <div class='weather__icon-wrap'>
-  <img class='weather__icon' src='${iconSRC}' alt='날씨아이콘' />
-<div>
+  <img class='weather__icon' src='${iconSRC}' alt='${iconAlt}' />
+</div>
 `.trim();
 };
 
