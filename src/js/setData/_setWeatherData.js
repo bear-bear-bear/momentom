@@ -1,4 +1,4 @@
-const status = document.querySelector('.weather');
+const weatherElem = document.querySelector('.weather');
 
 const FtoC = (F) => {
   const C = ((F / 32 - 32) * 5) / 9;
@@ -24,13 +24,13 @@ const getCurrPosition = () => {
     };
 
     const failure = (_) => {
-      status.textContent = '사용자의 지역 정보에 접근할 수 없습니다';
+      weatherElem.textContent = '사용자의 지역 정보에 접근할 수 없습니다';
     };
 
     if (!navigator.geolocation) {
-      status.textContent = '사용자의 브라우저가 지역 정보 접근을 지원하지 않습니다';
+      weatherElem.textContent = '사용자의 브라우저가 지역 정보 접근을 지원하지 않습니다';
     } else {
-      status.textContent = '지역정보 동기화 중…';
+      weatherElem.textContent = '지역정보 동기화 중…';
       navigator.geolocation.getCurrentPosition(success, failure);
     }
   });
@@ -47,7 +47,7 @@ const setWeatherData = async () => {
 
   const iconSRC = `https://openweathermap.org/img/wn/${iconName}@4x.png`;
 
-  status.innerHTML = `
+  weatherElem.innerHTML = `
 <p class='weather__text'>${name}, ${FtoC(Fahrenheit)}°C</p>
 <div class='weather__icon-wrap'>
   <img class='weather__icon' src='${iconSRC}' alt='${iconAlt}' />
