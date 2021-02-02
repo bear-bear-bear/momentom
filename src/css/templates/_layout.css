@@ -33,13 +33,3 @@ body {
   width: 100%;
   height: calc(100% - var(--header-height) - var(--footer-height));
 }
-
-.momentum-footer {
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: var(--footer-height);
-}
