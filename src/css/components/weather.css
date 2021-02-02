@@ -10,7 +10,7 @@
 .weather__icon-wrap {
   width: 1.66rem;
   height: 1.66rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.15);
   border: 1px solid black;
   border-radius: 5px;
   margin-left: 0.5rem;
