@@ -6,7 +6,7 @@
 }
 
 .clock__time__prop {
-  color: white;
+  color: var(--font-color);
 }
 
 .clock__time__hours {

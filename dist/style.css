@@ -131,6 +131,8 @@ table {
 :root {
   --header-height: 3rem;
   --footer-height: 3rem;
+
+  --font-color: white;
 }
 
 html,
@@ -315,7 +317,7 @@ body {
 }
 
 .clock__time__prop {
-  color: white;
+  color: var(--font-color);
 }
 
 .clock__time__hours {
@@ -340,7 +342,7 @@ body {
 
 .weather__text {
   font-size: 1.1rem;
-  color: white;
+  color: var(--font-color);
 }
 
 .weather__icon-wrap {
