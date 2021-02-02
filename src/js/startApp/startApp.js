@@ -1,6 +1,6 @@
 import initUniverse from './_initUniverse';
 import setUserName from './_setUserName';
-import greet from './_greet';
+import { createGreeting, greet } from './_greet';
 import launchRocket from './_launchRocket';
 import toMomentum from './_toMomentum';
 import { onHideElemsDisplay, onBackImage, offGreeting } from './_toggleElems';
@@ -14,6 +14,7 @@ const startApp = async () => {
     onHideElemsDisplay();
   } else {
     initUniverse();
+    await createGreeting();
     await setUserName();
     await greet();
     await launchRocket();

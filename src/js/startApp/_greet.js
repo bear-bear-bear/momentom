@@ -1,7 +1,24 @@
 import stop from './_stop';
 
+const createGreeting = async () => {
+  // greeting 엘리먼트 생성 함수
+  // 이 함수는 startApp.js 에서 실행됩니다.
+  const main = document.querySelector('.momentum-main');
+  const greeting = document.createElement('form');
+  greeting.classList.add('greeting');
+
+  greeting.innerHTML = `
+<label class="greeting__label" for="name">이름을 입력해주세요</label>
+<input class="greeting__input" id="name" type="text" minlength="1" maxlength="20" autocomplete="off">
+`.trim();
+
+  main.appendChild(greeting);
+};
+
 const greeting = {
-  greeting: document.querySelector('.greeting'),
+  setElem: async function () {
+    this.greeting = document.querySelector('.greeting');
+  },
 
   down() {
     this.greeting.style.opacity = '0';
@@ -19,6 +36,8 @@ const greeting = {
 };
 
 const greet = async () => {
+  await greeting.setElem();
+
   greeting.down();
   await stop(0.8);
 
@@ -39,4 +58,4 @@ const greet = async () => {
   return;
 };
 
-export default greet;
+export { createGreeting, greet };
