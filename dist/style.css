@@ -129,7 +129,7 @@ table {
 }
 
 :root {
-  --font-color: white;
+  --font-color: rgba(255, 255, 255, 0.9);
 }
 
 html,
@@ -311,6 +311,9 @@ body {
 }
 
 .clock__time__prop {
+  font-size: 7rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
   color: var(--font-color);
 }
 
