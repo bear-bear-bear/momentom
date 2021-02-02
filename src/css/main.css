@@ -33,7 +33,7 @@ body {
   transition: background-color 0.5s ease-in-out;
 }
 
-body.animeDone {
+body.anime-done {
   background: url(../img/back.jpg) no-repeat left/cover;
   /* opacity: 0;
   animation: slow-appearance 1s ease-in-out forwards;

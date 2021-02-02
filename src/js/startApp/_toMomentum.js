@@ -1,5 +1,5 @@
 import stop from './_stop';
-import onElems from './_onElems';
+import { onHideElemsDisplay, onBackImage, offStars, offGreeting } from './_toggleElems';
 
 const flash = {
   screen: document.body,
@@ -13,16 +13,11 @@ const flash = {
   },
 };
 
-const removeStars = () => {
-  const starsWrap = document.querySelector('.stars-wrap');
-
-  starsWrap?.remove();
-};
-
 const toMomentum = async () => {
   await flash.on();
 
-  removeStars();
+  offStars();
+  offGreeting();
 
   await stop(2);
 
@@ -30,7 +25,8 @@ const toMomentum = async () => {
 
   await stop(4);
 
-  onElems();
+  onHideElemsDisplay();
+  onBackImage();
 
   await stop(2);
 
