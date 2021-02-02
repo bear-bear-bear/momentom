@@ -55,6 +55,11 @@ body.anime-done {
   opacity: 0;
 }
 
+.weather,
+.clock {
+  transition: opacity 1s ease-in-out;
+}
+
 /* ------ temp ------- */
 /* body {
   transition: none;

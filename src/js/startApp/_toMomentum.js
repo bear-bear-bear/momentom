@@ -18,17 +18,15 @@ const toMomentum = async () => {
 
   offStars();
   offGreeting();
-
   await stop(2);
 
   await flash.off();
+  await stop(2);
 
+  onBackImage();
   await stop(4);
 
   onHideElemsDisplay();
-  onBackImage();
-
-  await stop(2);
 
   return;
 };
