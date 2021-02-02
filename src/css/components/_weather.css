@@ -5,6 +5,7 @@
 
 .weather__text {
   font-size: 1.1rem;
+  color: white;
 }
 
 .weather__icon-wrap {
