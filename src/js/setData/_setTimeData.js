@@ -8,13 +8,13 @@ const setTimeData = () => {
   let m = now.getMinutes(); // 0 - 59
   let session = 'AM';
 
-  if (h == 0) {
-    h = 12;
-  }
-
-  if (h > 12) {
+  if (h >= 12) {
     h = h - 12;
     session = 'PM';
+  }
+
+  if (h === 0) {
+    h = 12;
   }
 
   h = h < 10 ? '0' + h : h; // 암시적 타입변환 num -> string

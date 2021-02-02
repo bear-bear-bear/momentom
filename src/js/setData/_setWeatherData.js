@@ -1,7 +1,7 @@
 const weatherElem = document.querySelector('.weather');
 
-const FtoC = (F) => {
-  const C = ((F / 32 - 32) * 5) / 9;
+const KtoC = (K) => {
+  const C = K - 273.15;
 
   return C.toFixed(1);
 };
@@ -41,14 +41,14 @@ const setWeatherData = async () => {
 
   const {
     name,
-    main: { temp: Fahrenheit },
+    main: { temp: kelvin },
     weather: [{ icon: iconName, description: iconAlt }],
   } = await getWeatherData(lat, lon);
 
   const iconSRC = `https://openweathermap.org/img/wn/${iconName}@4x.png`;
 
   weatherElem.innerHTML = `
-<p class='weather__text'>${name}, ${FtoC(Fahrenheit)}°C</p>
+<p class='weather__text'>${name}, ${KtoC(kelvin)}°C</p>
 <div class='weather__icon-wrap'>
   <img class='weather__icon' src='${iconSRC}' alt='${iconAlt}' />
 </div>
