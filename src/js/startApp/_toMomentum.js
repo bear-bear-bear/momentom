@@ -24,7 +24,7 @@ const toMomentum = async () => {
   await stop(2);
 
   onBackImage();
-  await stop(4);
+  await stop(2);
 
   onHideElemsDisplay();
 

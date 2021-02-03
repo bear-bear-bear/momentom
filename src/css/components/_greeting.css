@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   font-size: 1.8rem;
   color: #ccc;
   z-index: 2;
@@ -53,7 +54,7 @@
   color: #ccc;
   font-size: 1em;
   font-weight: 700;
-  /* text-shadow: 0.1px 0.2px 5px silver; */
+  text-shadow: 0.1px 0.2px 1px silver;
   letter-spacing: 0.3em;
   -webkit-text-stroke: none;
   opacity: 0;
@@ -73,25 +74,3 @@
 .greeting__input:focus {
   outline: none;
 }
-
-/* .greeting::after {
-  content: '';
-  position: absolute;
-  top: -0.05em;
-  right: -0.05em;
-  width: 0.03125em;
-  height: 1.2em;
-  background-color: #ccc;
-  animation: blink-cursor 1s steps(1, end) infinite;
-}
-
-@keyframes blink-cursor {
-  0%,
-  100% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-} */

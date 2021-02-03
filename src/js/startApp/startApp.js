@@ -20,7 +20,6 @@ const startApp = async () => {
     await launchRocket();
     await toMomentum();
   }
-  // window.localStorage.clear(); // 임시
 };
 
 export default startApp;
