@@ -58,6 +58,7 @@ const setWeatherData = async () => {
   status.textContent = `${name}, ${KtoC(kelvin)}°C`;
 
   const icon = returnWeatherIcon(iconName, iconAlt);
+  iconWrap.style.display = 'initial';
   iconWrap.append(icon);
 };
 
