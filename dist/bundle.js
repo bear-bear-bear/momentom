@@ -132,6 +132,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var rege
 
 /***/ }),
 
+/***/ "./src/js/setData/_setSearchHref.js":
+/*!******************************************!*\
+  !*** ./src/js/setData/_setSearchHref.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar form = document.querySelector('.search__form');\nvar input = document.querySelector('.search__input');\n\nvar gotoGoogle = function gotoGoogle(e) {\n  e.preventDefault();\n  var keyword = input.value;\n  input.value = '';\n  location.href = \"https://www.google.co.kr/search?q=\".concat(keyword);\n};\n\nvar setSearchHref = function setSearchHref() {\n  form.addEventListener('submit', gotoGoogle, false);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (setSearchHref);\n\n//# sourceURL=webpack:///./src/js/setData/_setSearchHref.js?");
+
+/***/ }),
+
 /***/ "./src/js/setData/_setTimeData.js":
 /*!****************************************!*\
   !*** ./src/js/setData/_setTimeData.js ***!
@@ -164,7 +176,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction _slicedToArray(arr, 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _setWeatherData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_setWeatherData */ \"./src/js/setData/_setWeatherData.js\");\n/* harmony import */ var _setTimeData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_setTimeData */ \"./src/js/setData/_setTimeData.js\");\n\n\n\nvar setData = function setData() {\n  Object(_setWeatherData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n  Object(_setTimeData__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (setData);\n\n//# sourceURL=webpack:///./src/js/setData/setData.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _setWeatherData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_setWeatherData */ \"./src/js/setData/_setWeatherData.js\");\n/* harmony import */ var _setTimeData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_setTimeData */ \"./src/js/setData/_setTimeData.js\");\n/* harmony import */ var _setSearchHref__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_setSearchHref */ \"./src/js/setData/_setSearchHref.js\");\n\n\n\n\nvar setData = function setData() {\n  Object(_setWeatherData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n  Object(_setTimeData__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n  Object(_setSearchHref__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (setData);\n\n//# sourceURL=webpack:///./src/js/setData/setData.js?");
 
 /***/ }),
 
