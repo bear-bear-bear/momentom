@@ -9,9 +9,10 @@
 /* ----- components ----- */
 @import './components/_universe.css';
 @import './components/_greeting.css';
+@import './components/_scene.css';
 @import './components/_clock.css';
 @import './components/_weather.css';
-@import './components/_scene.css';
+@import './components/_search.css';
 
 /* ----- elements ----- */
 
