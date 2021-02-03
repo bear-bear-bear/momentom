@@ -13,7 +13,7 @@ const returnWeatherIcon = (name, alt) => {
 const KtoC = (K) => {
   const C = K - 273.15;
 
-  return C.toFixed(1);
+  return Math.round(C);
 };
 
 const getWeatherData = (lat, lon) => {
